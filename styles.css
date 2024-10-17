@@ -18,6 +18,17 @@ nav ul li a {
 nav ul li a:hover {
     background-color: blueviolet;
 }
+.video-container {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    
+
+}
+video {
+    max-width: 70%;
+    height: 50%;
+}
 
 
 
