@@ -1,17 +1,44 @@
-let title = document.getElementById("title");
-console.log(title);
-let image = document.getElementById("My-Image");
-console.log(image);
-let body = document.getElementsByTagName()
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("Page loaded.");
 
+    //Scroll Reveal animation
+    const sections = document.querySelectionAll("Section");
 
+    Const observer = new IntersectionObserver(entries =>{
+        entries.forEach(entry =>{
+            if (entry.isIntersecting) {
+                entry.target.style.Opacity = 1;
+                entry.target.style.transform = "translateY(0)";
+            }
+        });
 
+    }, {
+        threshold: 0.2
+    });
 
-function someFunction(){
-    
-    let otherImage = image;
-    body.appendChild(otherImage);
+    sections.forEach(section => observer.observe(Section));
 
-    //console.log(title.innerText);
-}
+    //Contact alert
+    const contactdetails = document.querySelector("details:nth-of-type(3)");
+    contactdetails.addEventListener("toggle", () =>{
+         
+        if (contactdetails.open) {
+            alert("Get in touch via email or phone!")
+        }
+
+    });
+
+    //Smooth scroll to sections
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            const target = document.querySelector(targetID);
+            if (target) {
+                target.scrollIntoView({ behavior: "smooth"});
+            }
+        });
+    });
+
+});
 
