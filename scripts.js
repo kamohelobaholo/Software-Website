@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //Scroll Reveal animation
     const sections = document.querySelectionAll("Section");
 
-    Const observer = new IntersectionObserver(entries =>{
+    const observer = new IntersectionObserver(entries =>{
         entries.forEach(entry =>{
             if (entry.isIntersecting) {
                 entry.target.style.Opacity = 1;
@@ -37,6 +37,14 @@ document.addEventListener("DOMContentLoaded", () => {
             if (target) {
                 target.scrollIntoView({ behavior: "smooth"});
             }
+        });
+    });
+    document.addEventListener("DOmContentLoaded", function(){
+        const togglebutton = document.getElementById("darkmodeToggle");
+
+        togglebutton.addEventListener("click", function(){
+            document.body.classList.toggle("dark-mode");
+            document.querySelector("nav").classList.toggle("dark-mode");
         });
     });
 
