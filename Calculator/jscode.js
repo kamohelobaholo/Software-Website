@@ -1,7 +1,7 @@
 const diplay= document.getElementById('display');
 const buttons= document.querySelectorAll('button');
 
-let currentInput = '';
+
 let operator = '';
 let firstValue = '';
 let secondvalue = '';
@@ -12,7 +12,7 @@ buttons.forEach(button => {
         if (button.classList.contains('btn-number'))
             {
                 if(display.textContent === '0' || operator && secondValue === '') {
-                    display.textContent = value;} else {display.textContent += value;
+                    display.textContent = value;} else  {display.textContent += value;
 
                     }
                 }
